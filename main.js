@@ -11,7 +11,7 @@ var app = electron.app;
 var shell = electron.shell;
 var BrowserWindow = electron.BrowserWindow;
 
-var win;
+var win, serverWin;
 
 function createWindow(url) {
   win = new BrowserWindow({
@@ -21,6 +21,9 @@ function createWindow(url) {
     autoHideMenuBar: true,
   });
   win.loadURL(url);
+  win.once('ready-to-show', function() {
+    win.show()
+  });
 
   // Open the DevTools?
   // win.webContents.openDevTools();
@@ -31,15 +34,29 @@ function createWindow(url) {
   });
 }
 
+function createServerWindow(url) {
+  serverWin = new BrowserWindow({});
+  serverWin.webContents.openDevTools();
+  serverWin.loadURL(url);
+  serverWin.on('closed', function() {
+    serverWin = null;
+  });
+}
+
 app.on('ready', function() {
-  createWindow("http://localhost:5001/science-writer/");
-  // make sure that external links are not opened within
-  // the native application
-  win.webContents.on('will-navigate', function(e, url) {
-    if (!url.startsWith('http://localhost')) {
-      e.preventDefault();
-      shell.openExternal(url);
-    }
+  createServerWindow("file://"+__dirname+"/server.html");
+  serverWin.once('ready-to-show', function() {
+    console.log('AAAAAA');
+    serverWin.show();
+    createWindow("http://localhost:5001/science-writer/");
+    // make sure that external links are not opened within
+    // the native application
+    win.webContents.on('will-navigate', function(e, url) {
+      if (!url.startsWith('http://localhost')) {
+        e.preventDefault();
+        shell.openExternal(url);
+      }
+    });
   });
 });
 
@@ -59,5 +76,3 @@ app.on('activate', function() {
     createWindow();
   }
 });
-
-require('./server');
