@@ -1,25 +1,15 @@
-'use strict';
+import Container from 'substance/model/Container'
 
-var Container = require('substance/model/Container');
-
-function Caption() {
-  Caption.super.apply(this, arguments);
+class Caption extends Container {
+  getTitle() {
+    var doc = this.getDocument()
+    if (doc) {
+      return doc.get(this.title)
+    }
+  }
 }
 
-Caption.Prototype = function() {
-
-  this.getTitle = function() {
-    var doc = this.getDocument();
-    if (doc) {
-      return doc.get(this.title);
-    }
-  };
-
-};
-
-Container.extend(Caption);
-
-Caption.type = 'caption';
+Caption.type = 'caption'
 
 /*
   Attributes
@@ -37,6 +27,6 @@ Caption.define({
   attributes: { type: 'object', default: {} },
   title: { type: 'title', optional: true },
   nodes: { type: ['p'], default: [] }
-});
+})
 
-module.exports = Caption;
+export default Caption

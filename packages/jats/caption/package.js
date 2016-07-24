@@ -1,14 +1,12 @@
-'use strict';
+import Caption from './Caption'
+import CaptionComponent from './CaptionComponent'
+import CaptionConverter from './CaptionConverter'
 
-var Caption = require('./Caption');
-var CaptionComponent = require('./CaptionComponent');
-var CaptionConverter = require('./CaptionConverter');
-
-module.exports = {
+export default {
   name: 'caption',
   configure: function(config) {
-    config.addNode(Caption);
-    config.addComponent(Caption.type, CaptionComponent);
-    config.addConverter('jats', CaptionConverter);
+    config.addNode(Caption)
+    config.addComponent(Caption.type, CaptionComponent)
+    config.addConverter('jats', CaptionConverter)
   }
-};
+}

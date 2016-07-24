@@ -1,12 +1,8 @@
-'use strict';
+import Container from 'substance/model/Container'
 
-var Container = require('substance/model/Container');
+class Body extends Container {}
 
-function Body() {
-  Body.super.apply(this, arguments);
-}
-
-Container.extend(Body);
+Container.extend(Body)
 
 /*
   Content
@@ -15,12 +11,12 @@ Container.extend(Body);
    sig-block?
 */
 
-Body.type = 'body';
+Body.type = 'body'
 
 Body.define({
   attributes: { type: 'object', default: {} },
   nodes: { type: ['id'], default: [] },
   sigBlock: { type: ['sig-block'], optional: true }
-});
+})
 
-module.exports = Body;
+export default Body

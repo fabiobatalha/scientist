@@ -1,8 +1,6 @@
-'use strict';
+import XMLIterator from '../../../util/XMLIterator'
 
-var XMLIterator = require('../../../util/XMLIterator');
-
-module.exports = {
+export default {
 
   type: 'caption',
   tagName: 'caption',
@@ -21,26 +19,26 @@ module.exports = {
   */
 
   import: function(el, node, converter) {
-    node.xmlAttributes = el.getAttributes();
+    node.xmlAttributes = el.getAttributes()
 
-    var children = el.getChildren();
-    var iterator = new XMLIterator(children);
+    var children = el.getChildren()
+    var iterator = new XMLIterator(children)
     // title is just annotated text
     iterator.optional('title', function(childEl) {
-      node.title = converter.convertElement(childEl).id;
-    });
+      node.title = converter.convertElement(childEl).id
+    })
     iterator.manyOf('p', function(childEl) {
-      node.nodes.push(converter.convertElement(childEl).id);
-    });
+      node.nodes.push(converter.convertElement(childEl).id)
+    })
     if (iterator.hasNext()) {
-      throw new Error('Invalid JATS:' + el.outerHTML);
+      throw new Error('Invalid JATS:' + el.outerHTML)
     }
   },
 
   export: function(node, el, converter) {
-    el.attr(node.xmlAttributes);
-    if (node.title) el.append(converter.convertNode(node.title));
-    el.append(converter.convertNodes(node.nodes));
+    el.attr(node.xmlAttributes)
+    if (node.title) el.append(converter.convertNode(node.title))
+    el.append(converter.convertNodes(node.nodes))
   }
 
-};
+}

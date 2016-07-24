@@ -1,17 +1,11 @@
-'use strict';
-
-var Container = require('substance/model/Container');
+import Container from 'substance/model/Container'
 
 /*
   Back matter
 
   Material published with an article but following the narrative flow.
 */
-function Back() {
-  Back.super.apply(this, arguments);
-}
-
-Container.extend(Back);
+class Back extends Container {}
 
 /*
   Attributes
@@ -29,6 +23,6 @@ Back.define({
   label: { type: 'label', optional:true },
   titles: { type: ['title'], default: [] },
   nodes: { type: ['id'], default: [] },
-});
+})
 
-module.exports = Back;
+export default Back

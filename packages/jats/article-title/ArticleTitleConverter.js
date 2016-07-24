@@ -1,8 +1,6 @@
-'use strict';
+import TextNodeConverter from '../TextNodeConverter'
 
-var TextNodeConverter = require('../TextNodeConverter');
-
-module.exports = TextNodeConverter.extend({
+export default TextNodeConverter.extend({
   type: 'article-title',
   tagName: 'article-title',
-});
+})

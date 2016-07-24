@@ -1,23 +1,14 @@
-'use strict';
+import TitleComponent from '../title/TitleComponent'
 
-var TitleComponent = require('../title/TitleComponent');
+class ArticleTitleComponent extends TitleComponent {
 
-function ArticleTitleComponent() {
-  ArticleTitleComponent.super.apply(this, arguments);
+  render($$) {
+    let el = super.render($$)
+    el.removeClass('sc-title')
+    el.addClass('sc-article-title')
+    return el
+  }
 
 }
 
-ArticleTitleComponent.Prototype = function() {
-  var _super = ArticleTitleComponent.super.prototype;
-
-  this.render = function() {
-    var el = _super.render.apply(this, arguments);
-    el.removeClass('sc-title');
-    el.addClass('sc-article-title');
-    return el;
-  };
-};
-
-TitleComponent.extend(ArticleTitleComponent);
-
-module.exports = ArticleTitleComponent;
+export default ArticleTitleComponent

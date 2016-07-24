@@ -1,19 +1,13 @@
-'use strict';
-
-var DocumentNode = require('substance/model/DocumentNode');
+import DocumentNode from 'substance/model/DocumentNode'
 
 /*
   ref
 
   One item in a bibliographic list.
 */
-function Contrib() {
-  Contrib.super.apply(this, arguments);
-}
+class Contrib extends DocumentNode {}
 
-DocumentNode.extend(Contrib);
-
-Contrib.type = 'contrib';
+Contrib.type = 'contrib'
 
 /*
   Content
@@ -22,6 +16,6 @@ Contrib.type = 'contrib';
 Contrib.define({
   attributes: { type: 'object', default: {} },
   xmlContent: {type: 'string', default: ''}
-});
+})
 
-module.exports = Contrib;
+export default Contrib
