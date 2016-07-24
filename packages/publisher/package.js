@@ -13,7 +13,7 @@ module.exports = {
     config.addComponent('overlay', Overlay);
     // TODO: this should be used as default, too
     config.setToolbarClass(Toolbar);
-    config.addStyle(__dirname, '_publisher');
+    config.addStyle(__dirname, '_publisher.scss');
 
     config.import(require('../jats/package'));
     config.import(require('../common/package'));
