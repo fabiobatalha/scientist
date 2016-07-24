@@ -46,18 +46,18 @@ function createServerWindow(url) {
 app.on('ready', function() {
   createServerWindow("file://"+__dirname+"/server.html");
   serverWin.once('ready-to-show', function() {
-    console.log('AAAAAA');
     serverWin.show();
-    createWindow("http://localhost:5001/science-writer/");
-    // make sure that external links are not opened within
-    // the native application
-    win.webContents.on('will-navigate', function(e, url) {
-      if (!url.startsWith('http://localhost')) {
-        e.preventDefault();
-        shell.openExternal(url);
-      }
-    });
   });
+  // for now we use electron only for debugging the server
+  // createWindow("http://localhost:5001/science-writer/");
+  // // make sure that external links are not opened within
+  // // the native application
+  // win.webContents.on('will-navigate', function(e, url) {
+  //   if (!url.startsWith('http://localhost')) {
+  //     e.preventDefault();
+  //     shell.openExternal(url);
+  //   }
+  // });
 });
 
 // Quit when all windows are closed.
