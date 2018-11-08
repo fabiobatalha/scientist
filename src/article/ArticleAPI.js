@@ -461,6 +461,10 @@ export default class ArticleAPI extends EditorAPI {
     return createEmptyElement(tx, 'disp-quote')
   }
 
+  _createEphigraph (tx) {
+    return createEmptyElement(tx, 'ephigraph')
+  }
+
   _insertFootnote (item, footnotes) {
     const collectionId = footnotes.id
     this.articleSession.transaction(tx => {

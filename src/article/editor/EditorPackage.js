@@ -30,6 +30,7 @@ import DecreaseHeadingLevelCommand from './DecreaseHeadingLevelCommand'
 import IncreaseHeadingLevelCommand from './IncreaseHeadingLevelCommand'
 import InsertExtLinkCommand from './InsertExtLinkCommand'
 import InsertDispQuoteCommand from './InsertDispQuoteCommand'
+import InsertEphigraphCommand from './InsertEphigraphCommand'
 import InsertXrefCommand from './InsertXrefCommand'
 import InsertFigureCommand from './InsertFigureCommand'
 import InsertFigureTool from './InsertFigureTool'
@@ -106,6 +107,10 @@ export default {
       nodeType: 'disp-quote',
       commandGroup: 'insert'
     })
+    config.addCommand('insert-ephigraph', InsertEphigraphCommand, {
+      nodeType: 'ephigraph',
+      commandGroup: 'insert'
+    })
     config.addCommand('insert-fig', InsertFigureCommand, {
       nodeType: 'fig',
       commandGroup: 'insert'
@@ -170,6 +175,7 @@ export default {
     config.addLabel('insert-xref-table', 'Table')
     config.addLabel('insert-xref-fn', 'Footnote')
     config.addLabel('insert-disp-quote', 'Blockquote')
+    config.addLabel('insert-ephigraph', 'Ephigraph')
 
     config.addLabel('manuscript-start', 'Article starts here')
     config.addLabel('manuscript-end', 'Article ends here')
@@ -218,6 +224,8 @@ export default {
     config.addIcon('insert-formula', { 'fontawesome': 'fa-dollar' })
 
     config.addIcon('insert-disp-quote', { 'fontawesome': 'fa-quote-right' })
+
+    config.addIcon('insert-ephigraph', { 'fontawesome': 'fa-quote-left' })
 
     config.addIcon('toggle-cell-merge', {
       'fontawesome': 'fa-arrows-h'

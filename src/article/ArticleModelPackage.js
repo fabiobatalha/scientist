@@ -4,6 +4,7 @@ import LanguagesPackage from './LanguagesPackage'
 
 import FigureModel from './models/FigureModel'
 import DispQuoteModel from './models/DispQuoteModel'
+import EphigraphModel from './models/EphigraphModel'
 import ArticleRecordModel from './models/ArticleRecordModel'
 import FigureCollectionModel from './models/FigureCollectionModel'
 import FootnoteCollectionModel from './models/FootnoteCollectionModel'
@@ -51,6 +52,7 @@ export default {
     config.addModel('container-translation', TranslationModel)
     config.addModel('figure', FigureModel)
     config.addModel('disp-quote', DispQuoteModel)
+    config.addModel('ephigraph', EphigraphModel)
     config.addModel('article-record', ArticleRecordModel)
     config.addModel('table-figure', FigureModel)
     config.addModel('xref', XrefModel)

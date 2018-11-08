@@ -5,6 +5,7 @@ import { createXMLConverters } from '../../shared/xmlSchemaHelpers'
 // TODO: rename to XML helpers
 import BodyConverter from './BodyConverter'
 import DispQuoteConverter from './DispQuoteConverter'
+import EphigraphConverter from './EphigraphConverter'
 import FigConverter from './FigConverter'
 import ElementCitationConverter from './ElementCitationConverter'
 import ListConverter from './ListConverter'
@@ -26,6 +27,7 @@ export default function createJatsImporter (doc) {
     // before calling element converters. Thus, in the export direction headings are already transformed into <sec> elements
     HeadingImporter,
     new DispQuoteConverter(),
+    new EphigraphConverter(),
     new FigConverter(),
     new ListConverter(),
     new PermissionsConverter(),

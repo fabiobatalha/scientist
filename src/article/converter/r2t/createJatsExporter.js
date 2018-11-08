@@ -5,6 +5,7 @@ import InternalArticleSchema from '../../InternalArticleSchema'
 import { createXMLConverters } from '../../shared/xmlSchemaHelpers'
 import BodyConverter from './BodyConverter'
 import DispQuoteConverter from './DispQuoteConverter'
+import EphigraphConverter from './EphigraphConverter'
 import FigConverter from './FigConverter'
 import ListConverter from './ListConverter'
 import PermissionsConverter from './PermissionsConverter'
@@ -27,6 +28,7 @@ export default function createJatsExporter (jatsDom, doc) {
   let converters = jatsConverters.concat([
     new BodyConverter(),
     new DispQuoteConverter(),
+    new EphigraphConverter(),
     new FigConverter(),
     new ListConverter(),
     new PermissionsConverter(),

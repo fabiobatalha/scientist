@@ -91,6 +91,13 @@ DispQuote.schema = {
   _childNodes: CHILDREN('p')
 }
 
+class Ephigraph extends XMLContainerNode {}
+Ephigraph.schema = {
+  type: 'disp-quote',
+  attrib: 'text',
+  _childNodes: CHILDREN('p')
+}
+
 class Figure extends DocumentNode {
   getContent () {
     return this.getDocument().get(this.content)
@@ -835,6 +842,7 @@ InternalArticleSchema.addNodes([
   Back,
   Content,
   DispQuote,
+  Ephigraph,
   Figure,
   Footnotes,
   Front,

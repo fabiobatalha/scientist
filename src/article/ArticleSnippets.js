@@ -2,6 +2,10 @@ export const DISP_QUOTE = () => `
   <disp-quote></disp-quote>
 `
 
+export const EPHIGRAPH = () => `
+  <disp-quote content-type="ephigraph"></disp-quote>
+`
+
 export const FIGURE_SNIPPET = () => `
   <fig xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ali="http://www.niso.org/schemas/ali/1.0">
     <caption></caption>
