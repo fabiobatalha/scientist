@@ -1,12 +1,12 @@
 import { DefaultDOMElement, importNodeIntoDocument, selectionHelpers } from 'substance'
 import createJatsImporter from './converter/r2t/createJatsImporter'
-import { DISP_QUOTE, EPHIGRAPH, FIGURE_SNIPPET,
+import { DISP_QUOTE, EPIGRAPH, FIGURE_SNIPPET,
   FOOTNOTE_SNIPPET, PERSON_SNIPPET, TABLE_SNIPPET
 } from './ArticleSnippets'
 
 const elementSpippetsMap = {
   'disp-quote': DISP_QUOTE,
-  'ephigraph': EPHIGRAPH,
+  'epigraph': EPIGRAPH,
   'figure': FIGURE_SNIPPET,
   'footnote': FOOTNOTE_SNIPPET,
   'person': PERSON_SNIPPET,

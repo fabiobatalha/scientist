@@ -24,7 +24,7 @@ import ExtLinkComponent from './ExtLinkComponent'
 import CaptionComponent from './CaptionComponent'
 import ContainerNodeComponent from './ContainerNodeComponent'
 import DispQuoteComponent from './DispQuoteComponent'
-import EphigraphComponent from './EphigraphComponent'
+import EpigraphComponent from './EpigraphComponent'
 import FootnoteComponent from './FootnoteComponent'
 import GraphicComponent from './GraphicComponent'
 import InlineFormulaComponent from './InlineFormulaComponent'
@@ -62,7 +62,7 @@ export default {
     config.addComponent('col', ElementNodeComponent)
     config.addComponent('colgroup', ElementNodeComponent)
     config.addComponent('disp-quote', DispQuoteComponent)
-    config.addComponent('ephigraph', EphigraphComponent)
+    config.addComponent('epigraph', EpigraphComponent)
     config.addComponent('fn', FootnoteComponent)
     config.addComponent('graphic', GraphicComponent)
     config.addComponent('inline-formula', InlineFormulaComponent)

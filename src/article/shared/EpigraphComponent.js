@@ -1,6 +1,6 @@
 import { Component } from 'substance'
 
-export default class EphigraphComponent extends Component {
+export default class EpigraphComponent extends Component {
   render ($$) {
     let model = this.props.model
     const contentValueModel = model.getPropertyValue('content')
@@ -9,10 +9,8 @@ export default class EphigraphComponent extends Component {
     const AttribEditor = this.getComponent(attribValueModel.type)
 
     let el = $$('div')
-      .addClass('sc-ephigraph')
+      .addClass('sc-epigraph')
       .attr('data-id', model.id)
-
-    el.attr('content-type', 'ephigraph')
 
     el.append(
       $$(ContentEditor, {

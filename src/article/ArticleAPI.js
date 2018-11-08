@@ -461,8 +461,8 @@ export default class ArticleAPI extends EditorAPI {
     return createEmptyElement(tx, 'disp-quote')
   }
 
-  _createEphigraph (tx) {
-    return createEmptyElement(tx, 'ephigraph')
+  _createEpigraph (tx) {
+    return createEmptyElement(tx, 'epigraph')
   }
 
   _insertFootnote (item, footnotes) {

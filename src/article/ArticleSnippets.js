@@ -2,8 +2,8 @@ export const DISP_QUOTE = () => `
   <disp-quote></disp-quote>
 `
 
-export const EPHIGRAPH = () => `
-  <disp-quote content-type="ephigraph"></disp-quote>
+export const EPIGRAPH = () => `
+  <disp-quote content-type="epigraph"></disp-quote>
 `
 
 export const FIGURE_SNIPPET = () => `

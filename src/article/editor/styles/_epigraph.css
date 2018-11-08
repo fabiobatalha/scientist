@@ -1,9 +1,9 @@
-.sc-ephigraph::before {
-    content: 'ephigraph block';
+.sc-epigraph::before {
+    content: 'epigraph block';
     font-size: 10px;
 }
 
-.sc-ephigraph {
+.sc-epigraph {
     border-left: 3px solid #444;
     padding-left: var(--t-default-spacing);
     margin-left: 50%;
