@@ -104,12 +104,12 @@ export default {
       commandGroup: 'insert-xref'
     })
     config.addCommand('insert-disp-quote', InsertDispQuoteCommand, {
-      nodeType: 'disp-quote',
-      commandGroup: 'insert'
+      dispQuoteType: 'disp-quote',
+      commandGroup: 'insert-disp-quote'
     })
-    config.addCommand('insert-epigraph', InsertEpigraphCommand, {
-      nodeType: 'epigraph',
-      commandGroup: 'insert'
+    config.addCommand('insert-disp-quote-epigraph', InsertDispQuoteCommand, {
+      dispQuoteType: 'epigraph',
+      commandGroup: 'insert-disp-quote'
     })
     config.addCommand('insert-fig', InsertFigureCommand, {
       nodeType: 'fig',
@@ -170,13 +170,14 @@ export default {
     })
 
     config.addLabel('cite', 'Cite')
+
     config.addLabel('insert-xref-bibr', 'Reference')
     config.addLabel('insert-xref-fig', 'Figure')
     config.addLabel('insert-xref-table', 'Table')
     config.addLabel('insert-xref-fn', 'Footnote')
+    config.addLabel('disp-quote', 'Blockquote')
     config.addLabel('insert-disp-quote', 'Blockquote')
-    config.addLabel('insert-epigraph', 'Epigraph')
-
+    config.addLabel('insert-disp-quote-epigraph', 'Epipraph')
     config.addLabel('manuscript-start', 'Article starts here')
     config.addLabel('manuscript-end', 'Article ends here')
     config.addLabel('sig-block-start', 'Signature Block starts here')
@@ -223,14 +224,12 @@ export default {
     config.addLabel('insert-formula', 'Formula')
     config.addIcon('insert-formula', { 'fontawesome': 'fa-dollar' })
 
-    config.addIcon('insert-disp-quote', { 'fontawesome': 'fa-quote-right' })
-
-    config.addIcon('insert-epigraph', { 'fontawesome': 'fa-quote-left' })
-
     config.addIcon('toggle-cell-merge', {
       'fontawesome': 'fa-arrows-h'
     })
     config.addIcon('toggle-cell-heading', { 'fontawesome': 'fa-th-large' })
+
+    config.addIcon('disp-quote', { 'fontawesome': 'fa-quote-right' })
 
     // Annotation tools
     config.addAnnotationTool({
@@ -411,6 +410,15 @@ export default {
         style: 'descriptive',
         items: [
           { type: 'command-group', name: 'text-types' }
+        ]
+      },
+      {
+        name: 'disp-quote',
+        type: 'tool-dropdown',
+        showDisabled: true,
+        style: 'minimal',
+        items: [
+          { type: 'command-group', name: 'insert-disp-quote'}
         ]
       },
       {
