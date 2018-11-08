@@ -3,7 +3,7 @@ import InsertNodeCommand from './InsertNodeCommand'
 export default class InsertDispQuoteCommand extends InsertNodeCommand {
 
   getType () {
-    return 'xref'
+    return 'disp-quote'
   }
 
   createNode (tx, params, context) {
